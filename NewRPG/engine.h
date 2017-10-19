@@ -6,6 +6,7 @@
 class Engine {
 private:
 	std::vector<textGUI*> guiButtons;
+	std::vector<graphGUI*> guiSprites;
 	sf::RenderWindow *window;
 public:
 	Engine(sf::RenderWindow *window);

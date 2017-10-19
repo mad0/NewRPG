@@ -19,16 +19,25 @@ Engine::Engine(sf::RenderWindow *window) {
 	guiButtons.push_back(new textGUI("Level:", font, sf::Vector2f(30, 160)));
 	guiButtons.push_back(new textGUI("------------", font, sf::Vector2f(180, 160), sf::Color(255, 122, 23)));
 	guiButtons.push_back(new textGUI("Map name:", font, sf::Vector2f(650, 10)));
+	//GUI SPRITES
+	guiSprites.push_back(new graphGUI("textures/line.jpg", sf::Vector2f(200,200)));
 }
 
 Engine::~Engine() {
 	for (int x = 0; x < guiButtons.size(); x++)
 		delete guiButtons[x];
+	for (int x = 0; x < guiSprites.size(); x++)
+		delete guiButtons[x];
 	std::cout << "END ENGINE...\n";
+
 }
 
 void Engine::Draw() {
 	window->clear();
+	//guiSprites
+	for (auto i : guiSprites)
+		i->Draw(*window);
+	//guiButtons
 	for (auto i : guiButtons)
 		i->Draw(*window);
 	window->display();

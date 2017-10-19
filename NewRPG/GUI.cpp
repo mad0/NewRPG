@@ -32,3 +32,23 @@ void textGUI::Draw(sf::RenderTarget& target) {
 void textGUI::Update() {
 	
 }
+
+
+///// GRAPHGUI
+
+graphGUI::graphGUI(const std::string& _file, sf::Vector2f _spritePosition) : file(_file), spritePosition(_spritePosition)  {
+	textureGUI->loadFromFile(file);
+	spriteGUI.setTexture(*textureGUI);
+	spriteGUI.setPosition(spritePosition);
+}
+
+graphGUI::~graphGUI() {
+
+ }
+
+void graphGUI::Draw(sf::RenderTarget& target){
+	target.draw(spriteGUI);
+}
+
+void graphGUI::Update(){
+}
