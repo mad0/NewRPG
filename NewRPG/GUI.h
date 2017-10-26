@@ -21,3 +21,17 @@ public:
 	void Update();
 };
 
+
+class graphGUI {
+private:
+	sf::Sprite spriteGUI;
+	std::string file;
+	sf::Texture *textureGUI;
+	sf::Vector2f spritePosition;
+public:
+	graphGUI(const std::string&, sf::Vector2f);
+	~graphGUI();
+	void Draw(sf::RenderTarget&);
+	void Update();
+
+};
