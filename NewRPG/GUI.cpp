@@ -37,6 +37,7 @@ void textGUI::Update() {
 ///// GRAPHGUI
 
 graphGUI::graphGUI(const std::string& _file, sf::Vector2f _spritePosition) : file(_file), spritePosition(_spritePosition)  {
+	textureGUI = new(sf::Texture);
 	textureGUI->loadFromFile(file);
 	spriteGUI.setTexture(*textureGUI);
 	spriteGUI.setPosition(spritePosition);

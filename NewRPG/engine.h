@@ -8,6 +8,7 @@ class Engine {
 private:
 	Character *player;
 	std::vector<textGUI*> guiButtons;
+	std::vector<graphGUI*> guiGraph;
 	sf::RenderWindow *window;
 public:
 	Engine(sf::RenderWindow *window);
