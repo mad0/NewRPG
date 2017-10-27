@@ -10,10 +10,11 @@ private:
 	std::vector<textGUI*> guiButtons;
 	std::vector<graphGUI*> guiGraph;
 	sf::RenderWindow *window;
+	sf::Font font;
 public:
 	Engine(sf::RenderWindow *window);
 	~Engine();
-
+	void Events(sf::Event&);
 	void Update();
 	void Draw();
 };

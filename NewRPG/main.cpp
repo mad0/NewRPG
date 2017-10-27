@@ -12,6 +12,8 @@ int main() {
 		{
 			if (event.type == sf::Event::Closed)
 				window.close();
+
+		start.Events(event);
 		}
 		start.Update();
 		start.Draw();
