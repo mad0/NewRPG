@@ -38,7 +38,7 @@ textGUI::~textGUI(){ std::cout << "END TEXTGUI...\n"; }
 void textGUI::Draw(sf::RenderTarget& target) { target.draw(buttonSprite); }
 
 void textGUI::Update() {
-	//buttonSprite.setString(this->buttonText);
+	buttonSprite.setString(this->buttonText);
 }
 
 

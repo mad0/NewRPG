@@ -9,10 +9,12 @@ Engine::Engine(sf::RenderWindow *window) {
 	std::string name("Heeero");
 	font.loadFromFile("Fire.otf");
 	//Y + 30 na pozycji
-	guiGraph.push_back(new graphGUI("gfx/hpBG.png",
+	guiGraph.push_back(new graphGUI("gfx/hpBG2.png",
 									sf::Vector2f(20,20)));
 	guiGraph.push_back(new graphGUI("gfx/hpBAR.png", 
 									sf::Vector2f(20, 20)));
+	guiGraph.push_back(new graphGUI("gfx/stats.png",
+									sf::Vector2f(400,200)));
 	//guiButtons.push_back(new textGUI("Name:", font, sf::Vector2f(30, 40)));
 	//guiButtons.push_back(new textGUI("Gerwazy Bomba", font, sf::Vector2f(180, 40), sf::Color(255,122,23)));
 	//guiButtons.push_back(new textGUI("Health Points:", font, sf::Vector2f(50, 20)));
@@ -44,6 +46,10 @@ void Engine::Events(sf::Event & _zdarz) {
 	}
 
 	if (_zdarz.type == sf::Event::KeyPressed && _zdarz.key.code == sf::Keyboard::Num2) {
+		player->setHP(100);
+	}
+	
+	if (_zdarz.type == sf::Event::KeyPressed && _zdarz.key.code == sf::Keyboard::C) {
 		player->setHP(100);
 	}
 }
