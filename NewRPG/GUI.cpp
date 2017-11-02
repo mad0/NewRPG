@@ -55,6 +55,10 @@ graphGUI::graphGUI(const std::string& _file, sf::Vector2f _spritePosition) : fil
 	spriteGUI.setPosition(spritePosition);
 }
 
+graphGUI::graphGUI(textGUI) {
+
+}
+
 //Destructor: graphGUI
 graphGUI::~graphGUI() { std::cout << "END GRAPH GUI...\n"; }
 
