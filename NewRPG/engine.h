@@ -7,7 +7,7 @@
 class Engine {
 private:
 	Character *player;
-	std::vector<textGUI*> guiButtons;
+	std::vector<styleGUI*> guiButtons;
 	std::vector<graphGUI*> guiGraph;
 	sf::RenderWindow *window;
 	sf::Font font;

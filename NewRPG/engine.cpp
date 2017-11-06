@@ -18,7 +18,7 @@ Engine::Engine(sf::RenderWindow *window) {
 	//guiButtons.push_back(new textGUI("Name:", font, sf::Vector2f(30, 40)));
 	//guiButtons.push_back(new textGUI("Gerwazy Bomba", font, sf::Vector2f(180, 40), sf::Color(255,122,23)));
 	//guiButtons.push_back(new textGUI("Health Points:", font, sf::Vector2f(50, 20)));
-	guiButtons.push_back(new textGUI(std::to_string(player->getHP())
+	guiButtons.push_back(new styleGUI(std::to_string(player->getHP())
 									,font,
 									sf::Vector2f(110, 40), 
 									sf::Color(sf::Color::White), 15));

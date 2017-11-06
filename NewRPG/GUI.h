@@ -3,27 +3,30 @@
 #include <string>
 #include <iostream>
 
-class textGUI {
+class styleGUI {
 private:
-	sf::Text buttonSprite;
-	std::string buttonText;
-	sf::Font buttonFont;
-	sf::Vector2f buttonPosition;
-	sf::Color textColor;
-	int size;
+	sf::Font fontFile;
+	sf::Color fontColor;
+	int fontSize;
 
 public:
-	textGUI(const std::string&, sf::Font&, sf::Vector2f);
-	textGUI(const std::string&, sf::Font&, sf::Vector2f, sf::Color, int);
-	sf::Vector2f getPosition();
-	void setPosition(sf::Vector2f);
-	sf::FloatRect getBounds();
-	void setText(const std::string&);
-	~textGUI();
-	void Draw(sf::RenderTarget&);
+	styleGUI(sf::Font& _fontFile, sf::Color _fontColor, int size_);
+	~styleGUI();
+	void setFont(sf::Font& _fontFile);
+	void setFontColor(sf::Color _fontColor);
+	void setFontSize(int _fontSize);
+	//TMP
 	void Update();
 };
 
+class textGUI {
+private:
+	std::string displayText;
+	sf::Text text;
+public:
+	textGUI();
+	~textGUI();
+};
 
 class graphGUI {
 private:
@@ -34,7 +37,7 @@ private:
 	
 public:
 	graphGUI(const std::string&, sf::Vector2f);
-	graphGUI(textGUI);
+	graphGUI(styleGUI);
 	~graphGUI();
 	sf::Vector2f getPosition();
 	void setPosition(sf::Vector2f);
