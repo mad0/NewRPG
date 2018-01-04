@@ -3,8 +3,7 @@
 int main() {
 	sf::RenderWindow window(sf::VideoMode(1440, 960), "My window");
 
-	Engine start(&window);
-
+	Engine start(window);
 	while (window.isOpen())
 	{
 		sf::Event event;
