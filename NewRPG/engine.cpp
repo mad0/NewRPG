@@ -6,7 +6,66 @@ Engine::Engine(sf::RenderWindow & _window) : window(_window) {
 	window.setKeyRepeatEnabled(false);
 	player = new Character(1000);
 	std::string name("Heeero");
+	cout = 0;
 	font.loadFromFile("Fire.otf");
+	kontener.setPrimitiveType(sf::Quads);
+	kontener.resize(100);
+	for (int z = 0;  z < 8; z++) {
+		xx = &kontener[z*4];
+		std::cout << z * 4 << "\n";
+		xx[0].position = sf::Vector2f(512, 10+z*70);
+		xx[1].position = sf::Vector2f(576, 10+z*70);
+		xx[2].position = sf::Vector2f(576, 64+z*70);
+		xx[3].position = sf::Vector2f(512, 64+z*70);
+		xx[0].color = sf::Color::White;
+		xx[1].color = sf::Color::White;
+		xx[2].color = sf::Color::White;
+		xx[3].color = sf::Color::White; 
+
+	}
+	
+
+
+		
+
+	
+	box.setPrimitiveType(sf::Quads);
+	box.resize(4);
+	box2.setPrimitiveType(sf::Quads);
+	box2.resize(4);
+	box3.setPrimitiveType(sf::Quads);
+	box3.resize(4);
+	//sf::VertexArray box(sf::Quads, 4);
+	box[0].position = sf::Vector2f(32, 0);
+	box[1].position = sf::Vector2f(64, 16);
+	box[2].position = sf::Vector2f(32, 32);
+	box[3].position = sf::Vector2f(0, 16);
+	box[0].color = sf::Color::Red;
+	box[1].color = sf::Color::Green;
+	box[2].color = sf::Color::Blue;
+	box[3].color = sf::Color::Magenta;
+	box2[0].position = sf::Vector2f(96, 0);
+	box2[1].position = sf::Vector2f(128, 16);
+	box2[2].position = sf::Vector2f(96, 32);
+	box2[3].position = sf::Vector2f(64, 16);
+	box2[0].color = sf::Color::Red;
+	box2[1].color = sf::Color::Green;
+	box2[2].color = sf::Color::Blue;
+	box2[3].color = sf::Color::Magenta;
+	box3[0].position = sf::Vector2f(64, 16);
+	box3[1].position = sf::Vector2f(96, 32);
+	box3[2].position = sf::Vector2f(64, 48);
+	box3[3].position = sf::Vector2f(32, 32);
+	box3[0].color = sf::Color::Red;
+	box3[1].color = sf::Color::Green;
+	box3[2].color = sf::Color::Blue;
+	box3[3].color = sf::Color::Magenta;
+	
+
+	//widok.setSize(1440, 960);
+	//widok.rotate(0);
+
+
 	//Y + 30 na pozycji
 	//guiGraph.push_back(new graphGUI("gfx/hpBG2.png",
 	//								sf::Vector2f(20,20)));
@@ -55,7 +114,12 @@ void Engine::Events(sf::Event & _zdarz) {
 
 
 void Engine::Draw() {
+	//window.setView(widok);
 	window.clear();
+	window.draw(box);
+	window.draw(box2);
+	window.draw(box3);
+	window.draw(kontener);
 	//for (auto i : guiGraph)
 	//	i->Draw(*window);
 	//for (auto i : guiButtons)

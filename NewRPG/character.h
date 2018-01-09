@@ -12,6 +12,6 @@ public:
 	void setMaxHP(int);
 	int getHP();
 	int getMaxHP();
-	int drawHP();
+	int bar();
 };
 

@@ -24,7 +24,7 @@ int Character::getMaxHP() {
 	return maxHP;
 }
 
-int Character::drawHP() {
+int Character::bar() {
 	//Return % value (250 = 250px bar png width)
 	return 250 * ((static_cast<float>(hp)) / (static_cast<float>(maxHP)));
 }

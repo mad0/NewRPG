@@ -8,8 +8,13 @@
 class Engine {
 private:
 	Character *player;
+	sf::VertexArray box,box2, box3;
+	sf::VertexArray kontener;
+	sf::Vertex *xx;
+	sf::View widok;
 	sf::RenderWindow &window;
 	sf::Font font;
+	int cout;
 public:
 	Engine(sf::RenderWindow&);
 	~Engine();
