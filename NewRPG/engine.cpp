@@ -9,8 +9,8 @@ Engine::Engine(sf::RenderWindow & _window) : window(_window) {
 	cout = 0;
 	font.loadFromFile("Fire.otf");
 	kontener.setPrimitiveType(sf::Quads);
-	kontener.resize(100);
-	for (int z = 0;  z < 8; z++) {
+	kontener.resize(16);
+	for (int z = 0;  z < 4; z++) {
 		xx = &kontener[z*4];
 		std::cout << z * 4 << "\n";
 		xx[0].position = sf::Vector2f(512, 10+z*70);
@@ -23,7 +23,24 @@ Engine::Engine(sf::RenderWindow & _window) : window(_window) {
 		xx[3].color = sf::Color::White; 
 
 	}
-	
+	int k = 0;
+	isometric.setPrimitiveType(sf::Quads);
+	isometric.resize(400);
+	for (int y = 0; y < 10; y++) {
+		for (int x = 0; x < 10; x++) {
+			std::cout << "x= " << x << "    y= " << y;
+			int c = (x+y) * 4;
+			std::cout <<"     pos="<< k << "\n";
+
+			yy = &isometric[k];
+			k = k + 4;
+			yy[0].position = sf::Vector2f(32 + (x * 64), 0+(y*16));
+			yy[1].position = sf::Vector2f(64 + (x * 64), 16+(y*16));
+			yy[2].position = sf::Vector2f(32 + (x * 64), 32+(y*16));
+			yy[3].position = sf::Vector2f(0 +( x * 64), 16+(y*16));
+		}
+		
+	}
 
 
 		
@@ -35,6 +52,7 @@ Engine::Engine(sf::RenderWindow & _window) : window(_window) {
 	box2.resize(4);
 	box3.setPrimitiveType(sf::Quads);
 	box3.resize(4);
+
 	//sf::VertexArray box(sf::Quads, 4);
 	box[0].position = sf::Vector2f(32, 0);
 	box[1].position = sf::Vector2f(64, 16);
@@ -116,10 +134,10 @@ void Engine::Events(sf::Event & _zdarz) {
 void Engine::Draw() {
 	//window.setView(widok);
 	window.clear();
-	window.draw(box);
-	window.draw(box2);
-	window.draw(box3);
-	window.draw(kontener);
+	//window.draw(box);
+	///window.draw(box2);
+	//window.draw(box3);
+	window.draw(isometric);
 	//for (auto i : guiGraph)
 	//	i->Draw(*window);
 	//for (auto i : guiButtons)

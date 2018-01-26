@@ -10,7 +10,9 @@ private:
 	Character *player;
 	sf::VertexArray box,box2, box3;
 	sf::VertexArray kontener;
+	sf::VertexArray isometric;
 	sf::Vertex *xx;
+	sf::Vertex *yy;
 	sf::View widok;
 	sf::RenderWindow &window;
 	sf::Font font;
